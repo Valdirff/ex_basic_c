@@ -1,0 +1,63 @@
+//*************************************************
+//         Nome do programa
+//*************************************************
+#include <stdio.h>
+#define TAM 50
+//*************************************************
+//                 funcoes
+//*************************************************
+void imprime_vetor(int V1[TAM],int V2[TAM]);
+void soma_vetor(int V1[TAM],int V2[TAM],int cont);
+void imprime_vetor_final(int V1[TAM], int cont);
+//*************************************************
+//         Variaveis Globais
+//*************************************************
+int tamanho,x;
+int vetor1[TAM],vetor2[TAM];
+//*************************************************
+int main(void)
+{
+   printf("\n\tNome do programa\n\n");
+   printf("\n\tQual seria a quantidade de numeros: ");
+   scanf("%d", &tamanho);
+   printf("\n\tEntre com o valor do VETOR1:\n\n");
+   for(x = 0; x < tamanho; x++)
+    {
+       printf("\n\tVetor1[%d] = ",x);
+       scanf("%d", &vetor1[x]);
+    }
+   printf("\n\tEntre com o valor do VETOR2:\n\n");
+   for(x = 0; x < tamanho; x++)
+    {
+       printf("\n\tVetor2[%d] = ",x);
+       scanf("%d", &vetor2[x]);
+    }
+    soma_vetor(vetor1, vetor2, tamanho);
+    //imprime_vetor(vetor1,vetor2);
+   return 0;
+}
+//*************************************************
+void imprime_vetor(int V1[TAM],int V2[TAM])
+{
+  printf("\n\n\tVetor1\tVetor2\n");
+    for(x = 0; x < tamanho; x++)
+    {
+        printf("\n\t  %d\t  %d",V1[x],V2[x]);
+    }
+}
+//*************************************************
+void soma_vetor(int V1[TAM],int V2[TAM], int cont)
+{
+   int vetor_somado[cont]; 
+   for(int x = 0; x < cont; x++)
+       vetor_somado[x] = V1[x] + V2[x]; 
+   imprime_vetor_final(vetor_somado,cont);    
+}
+//*************************************************
+void imprime_vetor_final(int V1[TAM], int cont)
+{
+    printf("\n\n\t");
+     for(int x = 0; x < cont; x++)
+         printf("%d  ", V1[x]);
+}
+//*************************************************
